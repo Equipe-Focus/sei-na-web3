@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "4838f43e-3fe3-495d-8685-c9acca77eea3",
+		"name": "sei-web3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5845405"
+	},
+	"item": [
+		{
+			"name": "contract",
+			"item": [
+				{
+					"name": "contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idBlockchain",
+									"value": "<id celo blockchain >",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{ip_docstone}}/contracts",
+							"protocol": "http",
+							"host": [
+								"{{ip_docstone}}"
+							],
+							"path": [
+								"contracts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "document",
+			"item": [
+				{
+					"name": "document write",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idContract",
+									"value": "<contract generate id>",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "idProcess",
+									"value": "<user id process>",
+									"type": "text"
+								},
+								{
+									"key": "codEtapa",
+									"value": "<user cod step>",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "[\"<data1>\",\"<data2>\",\"<data3>\"]",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "idModel",
+									"value": "<model id defined>",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "document",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{ip_docstone}}/documents",
+							"protocol": "http",
+							"host": [
+								"{{ip_docstone}}"
+							],
+							"path": [
+								"documents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "document read",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idContract",
+									"value": "<contract generate id>",
+									"type": "text"
+								},
+								{
+									"key": "idProcess",
+									"value": "<user id process>",
+									"type": "text"
+								},
+								{
+									"key": "codEtapa",
+									"value": "<user cod step>",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "< position document in step>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{ip_docstone}}/document_read",
+							"protocol": "http",
+							"host": [
+								"{{ip_docstone}}"
+							],
+							"path": [
+								"document_read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "documents read",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "idContract",
+									"value": "<contract generate id>",
+									"type": "text"
+								},
+								{
+									"key": "idProcess",
+									"value": "<user id process>",
+									"type": "text"
+								},
+								{
+									"key": "codEtapa",
+									"value": "<user cod step>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{ip_docstone}}/documents_read",
+							"protocol": "http",
+							"host": [
+								"{{ip_docstone}}"
+							],
+							"path": [
+								"documents_read"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tokenJwt",
+			"value": ""
+		}
+	]
+}

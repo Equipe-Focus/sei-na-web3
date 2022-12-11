@@ -1,0 +1,29 @@
+module.exports = async (server, controller, middleware, schemas) => {
+    server
+        .route('/documents')
+        .post(
+            schemas
+                .general_validation(schemas.writeSchema),
+            middleware.blockchain.check_contract(),
+            middleware.blockchain.check_model(),
+            middleware.blockchain.check_attributes(),
+            middleware.blockchain.send_pinata(),
+            controller.document.write_document,
+        );
+    server
+        .route('/document_read')
+        .post(
+            schemas
+                .general_validation(schemas.readSchema),
+            middleware.blockchain.check_document(),
+            controller.document.read_document,
+        );
+    server
+        .route('/documents_read')
+        .post(
+            schemas
+                .general_validation(schemas.readocsSchema),
+            middleware.blockchain.check_document(),
+            controller.document.read_documents,
+        );
+};
